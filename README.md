@@ -1,12 +1,12 @@
-#1. создать пользователя бд 
+1. создать пользователя бд 
   имя arina пароль 1234
   authentication type: Standard !!!!
 
-##2. перенос проекта:
+2. перенос проекта:
   git init
   git clone https://github.com/Draconic1/arinalab.git
 
-###3. запустить бэк
+3. запустить бэк
   запустить в воркбенче arina.sql
  
   после первого запуска удалить в файле server.js (бэк)
