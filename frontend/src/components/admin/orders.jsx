@@ -109,7 +109,6 @@ const Component = () => {
   };
 
 
-  //работает не трогать
   const [show, setShow] = useState(false);
   const [selectedId, setSelectedId] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
@@ -120,7 +119,6 @@ const Component = () => {
   };
 
 
-  //работает не трогать
   const handleSave = () => {
     const order = orders.find((x) => x.id === selectedId);
 
@@ -169,7 +167,6 @@ const Component = () => {
                   </option>
                 ))}
             </Form.Select>
-            <Form.Text className="text-muted">Статус нового заказа</Form.Text>
           </Form.Group>
         </Col>
 
@@ -189,7 +186,6 @@ const Component = () => {
                 filterOrders();
               }}
             ></Form.Control>
-            <Form.Text className="text-muted">Статус нового заказа</Form.Text>
           </Form.Group>
         </Col>
 
@@ -216,9 +212,6 @@ const Component = () => {
                   </option>
                 ))}
             </Form.Select>
-            <Form.Text className="text-muted">
-              Пользователь - владелец нового заказа
-            </Form.Text>
           </Form.Group>
         </Col>
       </Row>
@@ -229,7 +222,7 @@ const Component = () => {
             <tr>
               <th>ID</th>
               <th>Статус</th>
-              <th>ID Еды</th>
+              <th>ID Блюда</th>
               <th>Пользоватль</th>
               <th>Дата</th>
               <th>Изменить</th>
@@ -270,7 +263,6 @@ const Component = () => {
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>
-                <td>-</td>
               </tr>
             )}
           </tbody>
@@ -301,20 +293,19 @@ const Component = () => {
                     </option>
                   ))}
               </Form.Select>
-              <Form.Text className="text-muted">Статус нового заказа</Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Еда (ID)</Form.Label>
+              <Form.Label>Блюдо (ID)</Form.Label>
               <Form.Select
                 name="food_id"
-                placeholder="Еда (ID)"
+                placeholder="Блюдо (ID)"
                 value={foodId}
                 onChange={(e) => setFoodId(e.target.value)}
                 onBlur={(e) => setFoodId(e.target.value)}
               >
                 <option disabled value="">
-                  Выберите Еду (ID)
+                  Выберите Блюдо (ID)
                 </option>
                 {food &&
                   food.map((x) => (
@@ -323,7 +314,6 @@ const Component = () => {
                     </option>
                   ))}
               </Form.Select>
-              <Form.Text className="text-muted">Статус нового заказа</Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -345,9 +335,6 @@ const Component = () => {
                     </option>
                   ))}
               </Form.Select>
-              <Form.Text className="text-muted">
-                Пользователь - владелец нового заказа
-              </Form.Text>
             </Form.Group>
           </Col>
         </Row>
@@ -381,7 +368,6 @@ const Component = () => {
                   </option>
                 ))}
             </Form.Select>
-            <Form.Text className="text-muted">Статус нового заказа</Form.Text>
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>

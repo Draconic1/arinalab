@@ -111,7 +111,7 @@ const Component = () => {
 
     return (
         <div className="mb-5 p-2 border border-top-0 rounded-bottom">
-            <h3>Список еды</h3>
+            <h3>Список блюд</h3>
 
             {food && (
                 <Table striped bordered hover>
@@ -163,7 +163,7 @@ const Component = () => {
                 </Table>
             )}
 
-            <h3>Добавить новую еду</h3>
+            <h3>Добавить новое блюдо</h3>
 
             <Form onSubmit={addNew}>
                 <Row>
@@ -177,9 +177,6 @@ const Component = () => {
                                 value={Name}
                                 onChange={(e) => setName(e.target.value)}
                             />
-                            <Form.Text className="text-muted">
-                                Название новой еды
-                            </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
@@ -191,9 +188,6 @@ const Component = () => {
                                 value={Price}
                                 onChange={(e) => setPrice(e.target.value)}
                             />
-                            <Form.Text className="text-muted">
-                                Стоимость новой еды
-                            </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
@@ -205,7 +199,6 @@ const Component = () => {
                                 value={Weight}
                                 onChange={(e) => setWeight(e.target.value)}
                             />
-                            <Form.Text className="text-muted">Вес новой еды</Form.Text>
                         </Form.Group>
                     </Col>
 
@@ -219,7 +212,6 @@ const Component = () => {
                                 value={Image}
                                 onChange={(e) => setImage(e.target.value)}
                             />
-                            <Form.Text className="text-muted">Изображение новой еды</Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
@@ -241,9 +233,6 @@ const Component = () => {
                                         </option>
                                     ))}
                             </Form.Select>
-                            <Form.Text className="text-muted">
-                                Тип новой еды
-                            </Form.Text>
                         </Form.Group>
                     </Col>
                 </Row>
@@ -268,7 +257,6 @@ const Component = () => {
                             onChange={(e) => setSelectedName(e.target.value)}
                             onBlur={(e) => setSelectedName(e.target.value)}
                         />
-                        <Form.Text className="text-muted">Название</Form.Text>
                     </Form.Group>
 
 
@@ -282,7 +270,6 @@ const Component = () => {
                             onChange={(e) => setSelectedPrice(e.target.value)}
                             onBlur={(e) => setSelectedPrice(e.target.value)}
                         />
-                        <Form.Text className="text-muted">Стоимость</Form.Text>
                     </Form.Group>
 
 
@@ -296,7 +283,6 @@ const Component = () => {
                             onChange={(e) => setSelectedWeight(e.target.value)}
                             onBlur={(e) => setSelectedWeight(e.target.value)}
                         />
-                        <Form.Text className="text-muted">Вес новой еды</Form.Text>
                     </Form.Group>
 
                     <Form.Group className="mb-3">
@@ -309,7 +295,6 @@ const Component = () => {
                             onChange={(e) => setSelectedImage(e.target.value)}
                             onBlur={(e) => setSelectedImage(e.target.value)}
                         />
-                        <Form.Text className="text-muted">Изображение новой еды</Form.Text>
                     </Form.Group>
 
                     <Form.Group className="mb-3">
@@ -331,9 +316,6 @@ const Component = () => {
                                     </option>
                                 ))}
                         </Form.Select>
-                        <Form.Text className="text-muted">
-                            Тип новой еды
-                        </Form.Text>
                     </Form.Group>
 
                 </Modal.Body>

@@ -46,7 +46,7 @@ const Component = () => {
 
   return (
     <div className="mb-5 p-2 border border-top-0 rounded-bottom">
-      <h3>Список категорий еды</h3>
+      <h3>Список категорий</h3>
 
       {food_type && (
         <Table striped bordered hover>
@@ -93,9 +93,6 @@ const Component = () => {
                 value={newFood_Type.name}
                 onChange={handleChange}
               />
-              <Form.Text className="text-muted">
-                Название для новой категории
-              </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -107,7 +104,6 @@ const Component = () => {
                 value={newFood_Type.image}
                 onChange={handleChange}
               />
-              <Form.Text className="text-muted">Изображение новой категории</Form.Text>
             </Form.Group>
           </Col>
         </Row>
