@@ -2,7 +2,7 @@
   имя arina пароль 1234  
   authentication type: Standard !!!!  
     
-1.1. выполнить в воркбенче:  
+  выполнить в воркбенче:  
   CREATE DATABASE food;  
   GRANT ALL PRIVILEGES ON food.* TO arina@'localhost';  
 
