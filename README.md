@@ -1,6 +1,7 @@
 1. создать пользователя бд  
   имя arina  
   пароль 1234   
+  localhost  
   authentication type: Standard !!!!
 
 2. выполнить в воркбенче:  
