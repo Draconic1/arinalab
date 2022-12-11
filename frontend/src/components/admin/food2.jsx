@@ -86,7 +86,7 @@ const Component = () => {
         setShow(true);
     };
 
-    //работает не трогать
+
     const handleSave = () => {
         const foodd = food.find((x) => x.id === selectedId);
 
@@ -311,8 +311,8 @@ const Component = () => {
                             </option>
                             {food_type &&
                                 food_type.map((x) => (
-                                    <option key={x.val} value={x.val}>
-                                        {x.name}
+                                    <option key={x.id} value={x.id}>
+                                        {x.id} - {x.name}
                                     </option>
                                 ))}
                         </Form.Select>
