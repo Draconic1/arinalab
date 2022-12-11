@@ -1,7 +1,7 @@
 1. создать пользователя бд  
   имя arina пароль 1234  
   authentication type: Standard !!!!
-  ...
+  ...  
   выполнить в воркбенче:  
   CREATE DATABASE food;  
   GRANT ALL PRIVILEGES ON food.* TO arina@'localhost';  
