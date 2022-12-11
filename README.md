@@ -9,6 +9,7 @@
 3. перенос проекта:  
   git init  
   git clone https://github.com/Draconic1/arinalab.git  
+  npm i  
 
 4. запустить бэк  
   запустить в воркбенче arina.sql  
