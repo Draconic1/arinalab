@@ -15,13 +15,13 @@
 
 ______________________________
 
-1. админка:
-  cd backend
-  cd npm run mysql-admin
-  http://127.0.0.1:8082/
-  admin
-  QQqq33
+1. админка:  
+  cd backend  
+  cd npm run mysql-admin  
+  http://127.0.0.1:8082/  
+  admin  
+  QQqq33  
 
-2. пользователь админ на фронтенде:
-  лог: admin
-  пароль: admin
+2. пользователь админ на фронтенде:  
+  лог: admin  
+  пароль: admin  
