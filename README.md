@@ -2,18 +2,18 @@
   имя arina пароль 1234  
   authentication type: Standard !!!!
 
-  выполнить в воркбенче:  
+2. выполнить в воркбенче:  
   CREATE DATABASE food;  
   GRANT ALL PRIVILEGES ON food.* TO arina@'localhost';  
 
-2. перенос проекта:  
+3. перенос проекта:  
   git init  
   git clone https://github.com/Draconic1/arinalab.git  
 
-3. запустить бэк  
+4. запустить бэк  
   запустить в воркбенче arina.sql  
  
-4. после первого запуска в файле server.js (бэк)  изменить строки:  
+5. после первого запуска в файле server.js (бэк)  изменить строки:  
   30 строка: .sync({ force: true}) на  .sync({ })  
   удалить 33 строку  initial();
 
