@@ -108,9 +108,11 @@ const Component = () => {
                 )}
                 <Row>
                     <Col>
+                        {isLoggedIn && isUser &&(
                         <Button variant="warning" type="button" onClick={addCart}>
                             Добавить в корзину
                         </Button>
+                            )}
                     </Col>
                 </Row>
                 <Button
