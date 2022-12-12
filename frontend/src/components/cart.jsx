@@ -89,7 +89,6 @@ const Component = () => {
                 orders
                   .filter((x) => x.status === 1)
                   .map((x) => {
-                    const s = food_type.find((el) => +el.id === x.seat_id);
 
                     return (
                       <tr key={x.id}>

@@ -9,6 +9,7 @@ import CardGroup from 'react-bootstrap/CardGroup';
 
 import {setFood, setOrderStatuses, addOrder} from "./reducerSlice";
 import authHeader from "../services/auth-header";
+import Row from "react-bootstrap/Row";
 
 
 const Component = () => {
@@ -22,6 +23,7 @@ const Component = () => {
     const dispatch = useDispatch();
     const isUser = user?.roles?.indexOf("ROLE_USER") > -1;
 
+    const [selected, setSelected] = useState([]);
 
     useEffect(() => {
         axios.get(`${apiBase}/food/food_type/${id}`, {headers: authHeader()}).then((resp) => {
@@ -36,22 +38,35 @@ const Component = () => {
             });
     }, [apiBase, dispatch]);
 
+    const selectFood = (id) => {
+        const idx = selected.findIndex((x) => +x === +id);
+        if (idx > -1) {
+            selected.splice(idx, 1);
+            const tmpSelected = selected.slice(0, selected.length);
+            setSelected(tmpSelected);
+        } else {
+            const tmpSelected = selected.slice(0, selected.length);
+            tmpSelected.push(+id);
+            setSelected(tmpSelected);
+        }
+    };
 
     const addCart = () => {
         const status = orderStatuses.find((x) => x.name === "В корзине").val;
-
+        for (const s of selected) {
         axios
             .post(
                 `${apiBase}/orders`,
                 {
                     status: +status,
-                    food_id: +id,
+                    food_id: +s,
                 },
                 {headers: authHeader()}
             )
             .then((resp) => {
                 dispatch(addOrder(resp.data));
             });
+        }
     };
 
     return (
@@ -72,18 +87,18 @@ const Component = () => {
                                             {isLoggedIn && isUser &&(
                                                 <Button
                                                     key={x.id}
-                                                    variant="warning"
+                                                    variant="outline-warning"
                                                     style={{margin: 10}}
-                                                    onClick={addCart}
+                                                    onClick={(e) => selectFood(x.id)}
+                                                    active={selected.findIndex((el) => +el === +x.id) > -1}
                                                 >
-                                                    Добавить в корзину
+                                                    Выбрать
                                                 </Button>
                                             )}
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Col>
-
                         ))}
                 </CardGroup>
                 {!food.length && (
@@ -91,6 +106,13 @@ const Component = () => {
                         <h3>Упс! Меню пусто :(</h3>
                     </>
                 )}
+                <Row>
+                    <Col>
+                        <Button variant="warning" type="button" onClick={addCart}>
+                            Добавить в корзину
+                        </Button>
+                    </Col>
+                </Row>
                 <Button
                     variant="link"
                     as={Link}
@@ -100,6 +122,8 @@ const Component = () => {
                 </Button>
 
             </div>
+
+
         </>
     );
 };
